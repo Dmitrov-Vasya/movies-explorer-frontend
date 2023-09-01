@@ -49,7 +49,7 @@
 .header__link {
     display: block;
     text-decoration: none;
-    color: var(--color-white);
+    color: #FFF;
     transition: opacity 0.5s ease-out;
 
     font-weight: 500;

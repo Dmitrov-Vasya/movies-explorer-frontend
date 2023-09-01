@@ -13,7 +13,7 @@
 }
 
 .navigation__link {
-    color: var(--color-white);
+    color: #FFF;
 }
 
 @media (min-width: 768px) {

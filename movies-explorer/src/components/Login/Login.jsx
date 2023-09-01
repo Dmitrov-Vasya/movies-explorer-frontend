@@ -7,9 +7,7 @@ const Login = () => {
 
     return (
         <form className="login">
-
             <h2 className="login__greetings">Рады видеть!</h2>
-
             <label className="login__label">
                 E-mail
                 <input

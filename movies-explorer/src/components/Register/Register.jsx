@@ -8,9 +8,7 @@ const Register = () => {
 
     return (
         <form className="register">
-            <Logo />
             <h2 className="register__greetings">Добро пожаловать!</h2>
-
             <label className="register__label">Имя
                 <input
                     className="register__input"

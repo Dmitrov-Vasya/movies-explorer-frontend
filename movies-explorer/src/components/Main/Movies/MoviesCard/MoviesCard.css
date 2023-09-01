@@ -6,7 +6,7 @@
 
 .movies__link {
     text-decoration: none;
-    color: var(--color-white);
+    color: #FFF;
     display: flex;
     flex-direction: column;
 }

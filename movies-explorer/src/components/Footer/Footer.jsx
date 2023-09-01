@@ -12,6 +12,7 @@ const Footer = () => {
                     Учебный проект Яндекс.Практикум х BeatFilm.
                 </p>
                 <div className='footer__wrapper'>
+                    <p className='footer__copyright'>&copy; 2023</p>
                     <Navigation className={'footer__nav'}>
                         <ul className='footer__list'>
                             <li className='footer__item'>
@@ -34,7 +35,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </Navigation>
-                    <p className='footer__copyright'>&copy; 2023</p>
+
                 </div>
             </div>
         </footer>

@@ -44,7 +44,7 @@
 
 .portfolio__link {
     text-decoration: none;
-    color: var(--color-white);
+    color: #fff;
     position: relative;
     display: block;
     width: 100%;

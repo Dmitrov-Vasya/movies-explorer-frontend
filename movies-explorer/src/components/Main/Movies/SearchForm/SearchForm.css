@@ -71,7 +71,7 @@
 }
 
 .form__input_type_short:checked::before {
-    background-color: var(--color-white);
+    background-color: #FFF;
     transform: translateX(16px);
 }
 
@@ -87,7 +87,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
-    color: var(--color-white);
+    color: #FFF;
 }
 
 @media (min-width: 768px) {
