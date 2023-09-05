@@ -1,5 +1,5 @@
 .promo {
-    background-color: var(--color-cover);
+    background-color: #073042;
 }
 
 .promo__container {
@@ -13,12 +13,12 @@
     line-height: 39px;
     text-align: center;
     font-weight: 400;
-
+    color: white;
     padding: 207px 10px 246px;
     margin: 0;
 
-    background-color: var(--color-cover);
-    background-image: url(../../../../images/pic__COLOR_landing-logo.svg);
+    background-color: #073042;
+    background-image: url(../../../../images/landing-logo.svg);
     background-repeat: no-repeat;
     background-position: center 142px;
 }

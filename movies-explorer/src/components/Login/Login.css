@@ -5,6 +5,7 @@
     margin: 70px auto 0;
     font-family: 'Inter', 'Arial', serif;
     font-style: normal;
+
 }
 
 .login__greetings {
@@ -142,6 +143,7 @@ select:-webkit-autofill:focus {
     .login  {
         width: 260px;
         margin: 56px auto 0;
+
     }
 
     .login__greetings {

@@ -1,17 +1,16 @@
-import React from 'react'
-import "./FilterCheckbox.css";
+import React from 'react';
+import './FilterCheckbox.css';
 
 const FilterCheckbox = () => {
-
     return (
-        <div className="filtercheckbox">
-            <div className="filtercheckbox__handler">
-                <div
-                    className='filtercheckbox__handler-circle'></div>
+        <>
+            <div className="filter-checkbox">
+                <input className="filter-checkbox__input" type="checkbox" id="switch" />
+                <label className="filter-checkbox__label" htmlFor="switch"></label>
+                <span className="filter-checkbox__span">Короткометражки</span>
             </div>
-            <p className="filtercheckbox__title">Короткометражки</p>
-        </div>
+        </>
     );
-};
+}
 
 export default FilterCheckbox;

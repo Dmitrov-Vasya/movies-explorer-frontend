@@ -1,66 +1,104 @@
 import React from 'react'
 import './Header.css';
-import { Link, NavLink } from "react-router-dom";
 import logo from '../../images/logo.svg';
-import  Navigation from '../Navigation/Navigation'
+import profile from '../../images/icon-main.svg'
+import { useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 
-const Header = () => {
+const Header = ({ loggedIn }) => {
+    const [menuIsActive, setMenuIsActive] = useState(false);
+    const { pathname } = useLocation();
+    const isLoginPage = pathname === '/signup' || pathname === '/signin';
+
+    const classNameHeader = () => {
+        let className = 'header';
+        if (menuIsActive) {
+            className += ` header_active`;
+        }
+        if (loggedIn) {
+            className += ` header_login`;
+        }
+        if (pathname === '/') {
+            className += ` header_cover`;
+        }
+        if (isLoginPage) {
+            className += ` header_auth`;
+        }
+        return className;
+    };
+
+    function handleMenuClick() {
+        setMenuIsActive(true);
+    }
+
+    function handleCloseClick() {
+        setMenuIsActive(false);
+    }
 
     return (
-//        <header className={pathname === mainPath ? 'header header_cover' : 'header'}>
-        <header className='header'>
-            <div className='header__container'>
-                <Link className='header__link header__link_logo' >
+        <header className={classNameHeader()}>
+            <Link className='header__link header__link_logo' to='/'>
                     <img className='header__logo' src={logo} alt='SaveMovie' />
                 </Link>
-                <Navigation>
-                            <Link className='header__link'>
-                                Регистрация
-                            </Link>
-                            <Link className='header__button'>
-                                Войти
-                            </Link>
-                        </Navigation>
-                        <>
-                            <div className='header__wrapper'>
-                                <Navigation>
-                                    <ul className='header__list'>
-                                        <li className='header__item'>
-                                            <NavLink className='header__link'>
-                                                Главная
-                                            </NavLink>
-                                        </li>
-                                        <li className='header__item'>
-                                            <NavLink className='header__link'>
-                                                Фильмы
-                                            </NavLink>
-                                        </li>
-                                        <li className='header__item'>
-                                            <NavLink className='header__link'>
-                                                Сохранённые фильмы
-                                            </NavLink>
-                                        </li>
-                                    </ul>
-                                </Navigation>
-                                <Navigation>
-                                    <NavLink
-                                        className='header__link header__link_profile'>
-                                    >
-                                        Аккаунт
-                                    </NavLink>
-                                </Navigation>
-                                <button
-                                    className='header__button-close'
-                                    type='button'
-                                />
+             {!isLoginPage &&
+                (!loggedIn ? (
+                    <Navigation>
+                        <Link className='header__link' to='/signup'>
+                            Регистрация
+                        </Link>
+                        <Link className='header__button' to='/signin'>
+                            Войти
+                        </Link>
+                    </Navigation>
+                ) : (
+                    <>
+                        <div className='header__wrapper'>
+                            <Navigation>
+                                <ul className='header__list'>
+                                    <li className='header__item'>
+                                        <NavLink className='header__link' to='/'>
+                                            Главная
+                                        </NavLink>
+                                    </li>
+                                    <li className='header__item'>
+                                        <NavLink className='header__link' to='/movies'>
+                                            Фильмы
+                                        </NavLink>
+                                    </li>
+                                    <li className='header__item'>
+                                        <NavLink className='header__link' to='/saved-movies'>
+                                            Сохранённые фильмы
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </Navigation>
+                            <div className='header__wrapper-profile'>
+                                <NavLink
+                                    className='header__link header__link_profile'
+                                    to='/profile'
+                                    > Аккаунт
+                                </NavLink>
+                                <img className='header__logo-profile' src={profile}  alt='profile' />
                             </div>
                             <button
-                                className='header__button-menu'
+                                className='header__button-close'
                                 type='button'
+                                aria-label='Закрыть меню'
+                                onClick={handleCloseClick}
                             />
-                        </>
-            </div>
+                        </div>
+                        <button
+                            className='header__button-menu'
+                            type='button'
+                            aria-label='Окрыть меню'
+                            onClick={handleMenuClick}
+                        />
+                    </>
+                ))
+             }
         </header>
     );
 };
+
 export default Header;

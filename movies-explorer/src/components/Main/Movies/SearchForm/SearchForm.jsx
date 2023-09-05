@@ -1,28 +1,29 @@
-import React from 'react'
-import "./SearchForm.css";
-import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-
+import React from 'react';
+import './SearchForm.css';
+import find from '../../../../images/find.svg';
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
 const SearchForm = () => {
     return (
-        <form className="searchfilm"
-        >
-            <input
-                className="searchfilm__input"
-                type="search"
-                placeholder="Фильм"
-                required
-            />
-            <p
-                className="searchfilm__span">
-                Нужно ввести ключевое слово
-            </p>
-            <button className="searchfilm__btn" id="searchBtn">
-                <div className="searchfilm__btn-icon"></div>
-            </button>
+        <>
+        <section className="search-form">
+            <form className="search-form__container">
+                <input
+                    className="search-form__input"
+                    name="search"
+                    id="search"
+                    autoComplete="off"
+                    type="text"
+                    placeholder="Фильмы"
+                    required
+                />
+                <button className="search-form__button" type="submit" />
+                <img className="search-form__icon" src={find} alt="Поиск..." />
+            </form>
             <FilterCheckbox />
-        </form>
+        </section>
+        </>
     );
-};
+}
 
 export default SearchForm;

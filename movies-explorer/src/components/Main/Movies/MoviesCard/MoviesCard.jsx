@@ -1,37 +1,24 @@
-import "./MoviesCard.css";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from 'react';
+import './MoviesCard.css';
+import { timeToString } from '../../../../utils/timeToString';
 
-const MoviesCard = ({ movie, handleClick }) => {
-
+const MoviesCard = ({ movie }) => {
     return (
-        <div className="moviescard">
-            <div className="moviescard__header">
-                <div className="moviescard__textblock">
-                    <h4 className="moviescard__title">{nameRU}</h4>
-                    <p className="moviescard__duration">{getTimeFromMins(duration)}</p>
-                </div>
-                <button
-                    className={`${
-                        pathname === "/saved-movies"
-                            ? "moviescard__icon_delete"
-                            : "moviescard__icon"
-                    } ${isSaved ? "moviescard__icon_active " : ""}`}
-                    onClick={handleClickOnIcon}
-                    type="button"
-                ></button>
+        <li className="movies-card">
+            <img
+                className="movies-card__img"
+                src={movie.thumbnail}
+                alt={movie.nameRU}
+            />
+            <div className="movies-card__about">
+                <h2 className="movies-card__header">{movie.nameRU}</h2>
+                <button type="button" className="movies-card__icon" alt="Лайк" />
             </div>
-            <a
-                className="moviescard__img-link"
-                href={trailerLink}
-                target="_blank"
-                rel="noreferrer"
-            >
-                <img className="moviescard__image" src={image} alt={nameRU} />
-            </a>
-        </div>
+            <span className="movies-card__duration">
+        {timeToString(movie.duration)}
+      </span>
+        </li>
     );
-};
+}
 
 export default MoviesCard;
-}

@@ -6,9 +6,9 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 const SavedMovies = () => {
 return (
-    <div className='savedmovies'>
+    <div className='saved-movies'>
         <SearchForm />
-        <p className="savedmovies__empty-text">Вы еще не сохранили не один фильм.</p>
+        <p>Вы еще не сохранили не один фильм.</p>
         <MoviesCardList/>
     </div>
 )

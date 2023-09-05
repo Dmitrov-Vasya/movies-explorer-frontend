@@ -1,30 +1,94 @@
 import React from 'react'
-import { Route, Routes} from 'react-router-dom';
+import { useState } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import "../../vendor/inter.css";
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import ProjectPage from '../Main/ProjectPage/ProjectPage';
 import Movies from '../Main/Movies/Movies';
+import Footer from '../Footer/Footer';
+import Landing from '../Main/ProjectPage/ProjectPage';
+import Error from '../Error/Error';
+
 import Profile from '../Main/Profile/Profile';
-import Register from '../Register/Register';
-import Login from '../Login/Login';
-import SavedMovies from '../Main/Movies/SavedMovies/SavedMovies'
+import SavedMovies from '../Main/Movies/SavedMovies/SavedMovies';
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 const App = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [valueRegister, setValueRegister] = useState({});
+    const [valueLogin, setValueLogin] = useState({});
+    const [isErrorPage, setIsErrorPage] = useState(false);
+    const { pathname } = useLocation();
 
     return (
         <div className='App'>
-            <Header />
+
+            {!isErrorPage && <Header loggedIn={loggedIn} />}
             <Routes>
-                <Route path='/' element={<ProjectPage />}/>
-                <Route path='/movies' element={<Movies />}/>
-                <Route path='/saved-movies' element={<SavedMovies />}/>
-                <Route path='/profile' element={<Profile />}/>
-                <Route path='/signup' element={<Register />}/>
-                <Route path='/signin' element={<Login />}/>
+                <Route path='/' element={<Landing />} loggedIn={loggedIn} />
+                <Route
+                    path='/movies'
+                    element={<Movies />}
+                    loggedIn={loggedIn}
+                    isLoading={isLoading}
+                />
+                <Route
+                    path='/saved-movies'
+                    element={<SavedMovies />}
+                    loggedIn={loggedIn}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
+                />
+                <Route
+                    path='/profile'
+                    element={<Profile />}
+                    onSubmit={() => console.log('click')}
+                    setLoggedIn={setLoggedIn}
+                    isLoading={isLoading}
+                    loggedIn={loggedIn}
+                />
+                <Route
+                    path='/signup'
+                    element={
+                        loggedIn ? (
+                            <Navigate to='/' replace />
+                        ) : (
+                            <Register
+                                name='registration'
+                                value={valueRegister}
+                                setValue={setValueRegister}
+                                isLoading={isLoading}
+                            />
+                        )
+                    }
+                />
+                <Route
+                    path='/signin'
+                    element={
+                        loggedIn ? (
+                            <Navigate to='/movies' replace />
+                        ) : (
+                            <Login
+                                value={valueLogin}
+                                setValue={setValueLogin}
+                                isLoading={isLoading}
+                                setLoggedIn={setLoggedIn}
+
+                            />
+                        )
+                    }
+                />
+                <Route
+                    path='*'
+                    element={
+                        <Error setIsErrorPage={setIsErrorPage} />
+                    }
+                />
             </Routes>
-            <Footer />
+
+            {!isErrorPage && pathname !== '/signin' && '/signup' && <Footer />}
+
         </div>
     );
 };

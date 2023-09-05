@@ -9,11 +9,18 @@
     display: flex;
     gap: 24px;
     justify-content: center;
-    background-color: var(--color-grey27);
+    background-color: #272727;
 }
 
 .navigation__link {
     color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 145.455% */
+    text-decoration-line: underline;
 }
 
 @media (min-width: 768px) {

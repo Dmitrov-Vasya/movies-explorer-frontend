@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Navigation from '../../../Navigation/Navigation';
 import './NavTab.css';
 
 
 const NavTab = () => {
-
 
     return (
         <Navigation>
@@ -23,7 +22,8 @@ const NavTab = () => {
                 <li className='navigation__item'>
                     <Link className='navigation__link'>
                         Студент
-                    </Link>                </li>
+                    </Link>
+                </li>
             </ul>
         </Navigation>
     );

@@ -8,12 +8,25 @@
     margin: 0 auto;
 }
 
+.about-me__section{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid;
+}
+
+
 .about-me__wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.about-me__img {
+.about-me__photo {
     display: block;
     width: 292px;
     height: 352px;
@@ -24,6 +37,11 @@
 
 .about-me__info {
     order: 1;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .about-me__title {
@@ -38,10 +56,21 @@
     font-weight: 500;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 11px;
+    font-style: normal;
+    line-height: 16px; /* 145.455% */
 }
 
 .about-me__description {
     margin: 0 0 40px;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 145.455% */
 }
 
 .about-me__link {
@@ -56,8 +85,8 @@
     .about-me {
         padding-left: 50px;
         padding-right: 50px;
-        font-size: var(--text-tablet);
-        line-height: var(--height-tablet);
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .about-me__wrapper {
@@ -72,7 +101,7 @@
         flex-direction: column;
     }
 
-    .about-me__img {
+    .about-me__photo {
         width: 255px;
         height: 307px;
         margin: 0;
@@ -98,8 +127,8 @@
 
 @media (min-width: 1280px) {
     .about-me {
-        padding-left: var(--indent-desktop);
-        padding-right: var(--indent-desktop);
+        padding-left: 70px;
+        padding-right: 70px;
         padding-bottom: 101px;
     }
 
@@ -121,11 +150,11 @@
     }
 
     .about-me__description {
-        font-size: var(--text-desktop);
+        font-size: 14px;
         line-height: 22px;
     }
 
-    .about-me__img {
+    .about-me__photo {
         width: 270px;
         height: 327px;
     }

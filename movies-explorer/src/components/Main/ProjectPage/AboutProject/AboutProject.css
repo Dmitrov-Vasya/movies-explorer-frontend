@@ -1,11 +1,11 @@
-.about {
+.about-project {
+    max-width: 1280px;
+    margin: 0 auto;
     padding-left: 18px;
     padding-right: 18px;
-    max-width: 1280PX;
-    margin: 0 auto;
 }
 
-.about__list {
+.about-project__list {
     list-style: none;
     padding: 60px 0;
     margin: 0;
@@ -13,65 +13,113 @@
     flex-direction: column;
     gap: 56px;
 }
-
-.about__subtitle {
-    font-weight: 400;
+.about-project__section-title {
+    color: #FFF;
     font-size: 18px;
-    line-height: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     letter-spacing: -0.72px;
-    margin: 0;
-    padding-bottom: 16px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid;
+}
+.about-project__subtitle {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
 }
 
-.about__description {
-    margin: 0;
+.about-project__description {
+    color: #FFF;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 145.455% */
 }
 
-.about__stats {
+.about-project__info {
     display: grid;
     grid-template-columns: 100px 1fr;
     margin: 0;
 }
 
-.about__stats-duration {
-    background-color: var(--color-grey30);
-    padding: 11px 10px;
+.about-project__info-duration {
+    background-color: #3DDC84;
+    color: #000;
     text-align: center;
-    line-height: 13px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 11px 10px;
+
 }
 
-.about__stats-wrap:first-of-type>.about__stats-duration {
-    background-color: var(--color-second-one);
-    color: var(--color-black);
+.about-project__info-duration_type_black {
+    background-color: #303030;
+    color: #FFF;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 11px 10px;
 }
 
-.about__stats-name {
-    color: var(--color-greyA0);
+.about-project__info-wrapper:first-of-type > .about-project__info-duration {
+    background-color: #3DDC84;
+    color: var(#000);
+}
+
+.about-project__info-name {
+    color: #A0A0A0;
     padding-top: 10px;
     margin: 0;
     text-align: center;
-    line-height: 12px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.about-project__info-name_type_black {
+    color: #A0A0A0;
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 @media (min-width: 768px) {
-    .about {
+    .about-project {
         padding-left: 50px;
         padding-right: 50px;
     }
-
-    .about__subtitle {
+    .about-project__section-title {
+        font-size: 22px;
+        letter-spacing: -0.88px;
+        line-height: 27px;
+        padding-bottom: 24px;
+    }
+    .about-project__subtitle {
         font-size: 20px;
         letter-spacing: -0.8px;
         line-height: 24px;
         padding-bottom: 22px;
     }
 
-    .about__description {
-        font-size: var(--text-tablet);
-        line-height: var(--height-tablet);
+    .about-project__description {
+        font-size: 12px;
+        line-height: 18px;
     }
 
-    .about__list {
+    .about-project__list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
@@ -79,46 +127,46 @@
         padding: 70px 0 93px;
     }
 
-    .about__stats {
+    .about-project__info {
         grid-template-columns: 140px 1fr;
         font-size: 14px;
         line-height: 17px;
     }
 
-    .about__stats-duration {
-        background-color: var(--color-grey30);
+    .about-project__info-duration {
+        background-color: #3DDC84;
         padding: 9px 10px;
         text-align: center;
         line-height: 18px;
     }
 
-    .about__stats-name {
+    .about-project__info-name {
         padding-top: 14px;
         line-height: 16px;
     }
 }
 
 @media (min-width: 1280px) {
-    .about {
+    .about-project {
         padding-left: 70px;
         padding-right: 70px;
     }
 
-    .about__list {
+    .about-project__list {
         gap: 40px;
         padding-bottom: 110px;
     }
 
-    .about__subtitle {
+    .about-project__subtitle {
         padding-bottom: 26px;
     }
 
-    .about__description {
-        font-size: var(--text-desktop);
-        line-height: var(--height-desktop);
+    .about-project__description {
+        font-size: 14px;
+        line-height: 20px;
     }
 
-    .about__stats {
+    .about-project__info {
         grid-template-columns: 228px 1fr;
     }
 }

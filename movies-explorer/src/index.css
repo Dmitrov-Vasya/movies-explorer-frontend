@@ -1,6 +1,6 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/inter.css);
-@import url(./vendor/variables.css);
+/*@import url(./vendor/variables.css);*/
 
 html {
     scroll-behavior: smooth;
@@ -20,8 +20,8 @@ html {
 
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
-    font-size: var(--text-mobile);
-    line-height: var(--height-mobile);
+    font-size: 11px;
+    line-height: 16px;
 }
 
 .page:has(.header_active) {
@@ -58,7 +58,7 @@ html {
     [type="button"]:focus-visible,
     [type="reset"]:focus-visible,
     [type="submit"]:focus-visible {
-        outline-color: var(--color-second-two-50);
+        outline-color: rgba(66, 133, 244, 0.5);
         outline-style: solid;
         outline-width: 2px;
         outline-offset: 1px;
