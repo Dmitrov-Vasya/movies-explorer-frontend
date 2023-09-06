@@ -28,7 +28,7 @@ const Register = () => {
             <span className="register__server-error"></span>
             <button className="register__button">Зарегистрироваться</button>
             <p className="register__subtitle">
-                Уже зарегистрированы?
+                Уже зарегистрированы?&ensp;
                 <Link to="/signin" className="register__link">
                     Войти
                 </Link>

@@ -54,6 +54,7 @@ const Header = ({ loggedIn }) => {
                 ) : (
                     <>
                         <div className='header__wrapper'>
+
                             <Navigation>
                                 <ul className='header__list'>
                                     <li className='header__item'>

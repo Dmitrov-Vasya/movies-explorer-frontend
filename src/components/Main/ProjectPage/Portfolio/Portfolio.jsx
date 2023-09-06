@@ -16,7 +16,7 @@ const Portfolio = () => {
                             <Link
                                 className='portfolio__link'
                                 target='_blank'
-                                src='https://github.com/Dmitrov-Vasya/how-to-learn.git'
+                                to='https://github.com/Dmitrov-Vasya/how-to-learn.git'
                             >
                                 Статичный сайт
                             </Link>
@@ -25,7 +25,7 @@ const Portfolio = () => {
                             <Link
                                 className='portfolio__link'
                                 target='_blank'
-                                src='https://github.com/Dmitrov-Vasya/russian-travel.git'
+                                to='https://github.com/Dmitrov-Vasya/russian-travel.git'
                             >
                                 Адаптивный сайт
                             </Link>
@@ -34,7 +34,7 @@ const Portfolio = () => {
                             <Link
                                 className='portfolio__link'
                                 target='_blank'
-                                src='https://github.com/Dmitrov-Vasya/react-mesto-api-full-gha'
+                                to='https://github.com/Dmitrov-Vasya/react-mesto-api-full-gha'
                             >
                                 Одностраничное приложение
                             </Link>

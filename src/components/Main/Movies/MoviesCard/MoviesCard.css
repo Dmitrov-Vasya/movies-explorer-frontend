@@ -3,7 +3,6 @@
     flex-direction: column;
     background: #222222;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -14,13 +13,12 @@
 
 @media screen and (max-width: 900px) {
     .movies-card {
-        max-width: 338px;
+        max-width: 364px;
     }
 }
 
 .movies-card__img {
-    border-radius: 9px 9px 0 0;
-    width: 100%;
+    max-width: 364px;
     object-fit: cover;
     background-color: #222222;
 }

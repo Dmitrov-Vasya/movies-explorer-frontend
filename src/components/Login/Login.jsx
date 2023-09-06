@@ -32,8 +32,8 @@ const Login = ({setLoggedIn}) => {
                 Войти
             </button>
             <p className="login__subtitle">
-                Еще не зарегистрированы?
-                <Link to="/signup" className="login__link">
+                Еще не зарегистрированы?&ensp;
+                 <Link to="/signup" className="login__link">
                     Регистрация
                 </Link>
             </p>

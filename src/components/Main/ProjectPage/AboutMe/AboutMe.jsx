@@ -21,7 +21,7 @@ const AboutMe = () => {
                             Веб-разработчик. На данный момент заканчиваю обучение и практикуюсь в компании на реальных задачах.
                             Хочу развиваться и двигаться в этом новом, а самое главное интересном направлении для меня.
                         </p>
-                        <Link className='about-me__link' target='_blank'>
+                        <Link to='https://github.com/Dmitrov-Vasya' className='about-me__link' target='_blank'>
                             Github
                         </Link>
                     </div>
