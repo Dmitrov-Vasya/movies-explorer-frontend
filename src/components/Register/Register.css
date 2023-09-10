@@ -2,8 +2,8 @@
     width: 396px;
     display: flex;
     flex-direction: column;
-    margin: 70px auto 0;
-    font-family: 'Inter', 'Arial', serif;
+    margin: 0 auto 0;
+    font-family: Inter, Arial, serif;
     font-style: normal;
 }
 
@@ -12,7 +12,7 @@
     font-size: 24px;
     line-height: 29px;
     color: rgba(255, 255, 255, 1);
-    margin: 40px 0 40px;
+    margin: 20px 0 40px;
 }
 
 .register__label {
@@ -36,6 +36,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+
 }
 
 .register__line {
@@ -49,7 +50,7 @@
 
 .register__error {
     visibility: hidden;
-    font-family: 'Inter';
+    font-family: Inter;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -64,7 +65,7 @@
 
 .register__server-error {
     visibility: hidden;
-    font-family: 'Inter';
+    font-family: Inter;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -88,6 +89,7 @@
     border: none;
     margin: 0 0 16px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .register__button:hover {
@@ -102,12 +104,12 @@
 }
 
 .register__subtitle {
-    margin: 0 auto 0;
+    margin: 0 auto 70px;
     color: rgba(139, 139, 139, 1);
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-}
+    }
 
 .register__link {
     color: rgba(66, 133, 244, 1);
@@ -140,6 +142,38 @@ select:-webkit-autofill:focus {
     background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
 }
 
+@media (max-width: 768px) {
+    .register {
+        margin-top: 0;
+        margin-bottom: 232px;
+    }
+
+    .register__title {
+        margin-top: 20px;
+    }
+
+    .register__input {
+        width: 396px;
+        height: 46px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: #2F2F2F;
+
+    }
+
+    .register__subtitle {
+        margin-bottom: 232px;
+    }
+    .register__label {
+        border-radius: 8px;
+    }
+    .register__server-error {
+        margin-top: 69px;
+
+    }
+
+}
+
 @media (max-width: 420px) {
     .register {
         width: 260px;
@@ -153,11 +187,18 @@ select:-webkit-autofill:focus {
     .register__button {
         font-size: 12px;
         line-height: 15px;
+        cursor: pointer;
+    }
+
+    .register__input {
+        width: 260px;
+        height: 46px;
     }
 
     .register__subtitle {
         font-size: 12px;
         line-height: 15px;
+        margin-bottom: 30px;
     }
 
     .register__link {

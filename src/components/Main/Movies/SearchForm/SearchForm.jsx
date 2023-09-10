@@ -14,7 +14,7 @@ const SearchForm = () => {
                     id="search"
                     autoComplete="off"
                     type="text"
-                    placeholder="Фильмы"
+                    placeholder="Фильм"
                     required
                 />
                 <button className="search-form__button" type="submit" />

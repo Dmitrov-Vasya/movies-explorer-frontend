@@ -1,8 +1,8 @@
 import React from 'react'
 import './Navigation.css';
 
-const Navigation = ({ children }) => {
-    return <nav className={`navigation`}>{children}</nav>;
+const Navigation = ({ className, children }) => {
+    return <nav className={`navigation ${className ?? ''}`}>{children}</nav>;
 };
 
 export default Navigation;

@@ -90,6 +90,13 @@
     }
 }
 
+@media (min-width: 320px) {
+    .techs__title {
+    margin-top: 66px;
+    }
+}
+
+
 @media (min-width: 1280px) {
     .techs {
         padding: 100px 70px;

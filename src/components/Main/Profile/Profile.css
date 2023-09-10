@@ -17,6 +17,7 @@
     margin: 74px 0 123px 0;
     font-size: 24px;
     line-height: 29px;
+    font-weight: 500;
     color: #ffffff;
 }
 
@@ -113,6 +114,7 @@
     padding: 0 0 70px 0;
     cursor: pointer;
     margin: 0;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 450px) {

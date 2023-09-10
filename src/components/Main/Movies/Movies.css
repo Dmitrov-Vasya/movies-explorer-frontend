@@ -5,12 +5,14 @@
 @media screen and (max-width: 900px) {
     .movies__button-wrapper {
         padding: 0 30px 0 30px;
+        cursor: pointer;
     }
 }
 
 @media screen and (max-width: 450px) {
     .movies__button-wrapper {
         padding: 0 10px 0 10px;
+        cursor: pointer;
     }
 }
 
@@ -34,4 +36,5 @@
 
 .movies__button_add:hover {
     opacity: 0.8;
+    cursor: pointer;
 }

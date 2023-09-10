@@ -88,6 +88,12 @@
         font-size: 12px;
         line-height: 18px;
     }
+    .about-me__section{
+        font-size: 22px;
+        letter-spacing: -0.88px;
+        padding-bottom: 23px;
+
+    }
 
     .about-me__wrapper {
         flex-direction: row;
@@ -114,9 +120,17 @@
         line-height: 40px;
     }
 
+
     .about-me__subtitle {
+        line-height: 18px;
+        font-size: 12px;
         margin-bottom: 20px;
         margin-top: 16px;
+    }
+
+    .about-me__description {
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .about-me__link {
@@ -131,7 +145,12 @@
         padding-right: 70px;
         padding-bottom: 101px;
     }
-
+    .about-me__section{
+        font-size: 22px;
+        letter-spacing: -0.88px;
+        padding-bottom: 23px;
+        border-bottom: 1px solid;
+    }
     .about-me__wrapper {
         gap: 270px;
     }
@@ -150,6 +169,7 @@
     }
 
     .about-me__description {
+        max-width: 600px;
         font-size: 14px;
         line-height: 22px;
     }

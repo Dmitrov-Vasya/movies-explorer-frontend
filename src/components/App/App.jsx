@@ -86,7 +86,7 @@ const App = () => {
                 />
             </Routes>
 
-            {!isErrorPage && pathname !== '/signin' && '/signup' && <Footer />}
+            {(pathname !== '/signin' && pathname !== '/signup' && pathname !=='/profile' && pathname !=='/*') ?  <Footer /> : (pathname === '/signin' && pathname === '/signup' && pathname ==='/profile' && pathname ==='/*') }
 
         </div>
     );

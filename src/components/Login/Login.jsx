@@ -9,6 +9,7 @@ const Login = ({setLoggedIn}) => {
     }
 
     return (
+        <main className="main">
         <form className="login" onSubmit={handleSubmit}>
             <h2 className="login__greetings">Рады видеть!</h2>
             <label className="login__label">
@@ -38,6 +39,7 @@ const Login = ({setLoggedIn}) => {
                 </Link>
             </p>
         </form>
+        </main>
     );
 };
 

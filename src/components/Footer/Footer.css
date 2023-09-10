@@ -84,8 +84,16 @@
     .footer__button-exit {
         font-size: 13px;
         line-height: 16px;
+        cursor: pointer;
     }
 }
+
+@media (min-width: 320px) {
+  .footer__copyright{
+      margin-bottom: 20px;
+  }
+}
+
 
 @media (min-width: 1280px) {
     .footer {

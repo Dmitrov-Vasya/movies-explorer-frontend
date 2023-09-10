@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 const Register = () => {
 
     return (
+        <main className='main'>
         <form className="register">
             <h2 className="register__title">Добро пожаловать!</h2>
             <label className="register__label">Имя
@@ -34,6 +35,7 @@ const Register = () => {
                 </Link>
             </p>
         </form>
+        </main>
     );
 };
 

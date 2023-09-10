@@ -7,15 +7,17 @@ const Movies = () => {
 
     return (
         <>
-        <section className="movies">
-            <SearchForm />
-            <MoviesCardList />
-            <div className="movies__button-wrapper">
-                <button className="movies__button_add" type="button">
-                    Ещё
-                </button>
-            </div>
-        </section>
+            <main className="main">
+                <section className="movies">
+                    <SearchForm />
+                     <MoviesCardList />
+                     <div className="movies__button-wrapper">
+                         <button className="movies__button_add" type="button">
+                             Ещё
+                         </button>
+                     </div>
+                </section>
+            </main>
         </>
     );
 };

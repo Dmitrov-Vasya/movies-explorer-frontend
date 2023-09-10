@@ -11,7 +11,7 @@ const NavTab = () => {
         <Navigation>
             <ul className='navigation__list'>
                 <li className='navigation__item'>
-                    <Link to='about' smooth={true} duration={500} className='navigation__link'>
+                    <Link href='' to='about' smooth={true} duration={500} className='navigation__link'>
                         О проекте
                     </Link>
                 </li>

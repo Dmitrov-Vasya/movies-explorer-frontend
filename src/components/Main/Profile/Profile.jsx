@@ -11,7 +11,7 @@ const Profile = ({setLoggedIn}) => {
 
     return (
         <>
-            <section className="profile">
+            <main className="profile">
                 <h2 className="profile__title">Привет, Виталий!</h2>
                 <form className="profile__form" noValidate>
                     <div className="profile__input-wrapper">
@@ -55,7 +55,7 @@ const Profile = ({setLoggedIn}) => {
                 <Link to="/signin" className="profile__exit-button" onClick={handleLogout}>
                     Выйти из аккаунта
                 </Link>
-            </section>
+            </main>
         </>
     );
 };
