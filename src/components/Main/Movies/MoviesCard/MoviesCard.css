@@ -21,6 +21,7 @@
     padding: 16px 16px;
     display: flex;
     justify-content: space-between;
+    padding-top: 12px;
 }
 
 .movies-card__duration {
@@ -57,11 +58,24 @@
     border: none;
     width: 14px;
 }
+.movies-card__icon-delete {
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+    background: url('../../../../images/delete.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 14px;
+}
 
 @media screen and (max-width: 1279px) {
     .movies-card:last-child {
         justify-content: flex-start;
     }
+
 }
 
 @media screen and (max-width: 768px) {

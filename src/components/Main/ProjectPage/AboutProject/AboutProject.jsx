@@ -29,8 +29,8 @@ const AboutProject = () => {
                     <dd className='about-project__info-name'>Back-end</dd>
                 </div>
                 <div className='about-project__info-wrapper'>
-                    <dt className='about-project__info-duration_type_black'>4 недели</dt>
-                    <dd className='about-project__info-name_type_black'>Front-end</dd>
+                    <dt className='about-project__info-duration about-project__info-duration_type_black'>4 недели</dt>
+                    <dd className='about-project__info-name about-project__info-name_type_black'>Front-end</dd>
                 </div>
             </dl>
         </section>

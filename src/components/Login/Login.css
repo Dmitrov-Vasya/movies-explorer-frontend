@@ -24,14 +24,14 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
-    margin: 0 0 10px;
+    margin: 0 0 13px;
 
 }
 
 .login__input {
     margin: 0;
     padding: 0;
-    height: 17px;
+    height: 46px;
     background: none;
     border: none;
     color: rgba(255, 255, 255, 1);
@@ -70,7 +70,7 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
-    margin: 169px 0 6px;
+    margin: 155px 0 6px;
     color: rgba(238, 52, 101, 1);
 }
 
@@ -160,7 +160,7 @@ select:-webkit-autofill:focus {
         background: #2F2F2F;
     }
     .login__server-error {
-        margin-top: 160px;
+        margin-top: 153px;
     }
     .login__subtitle {
         margin-bottom: 232px;
@@ -170,12 +170,13 @@ select:-webkit-autofill:focus {
 @media (max-width: 420px) {
     .login  {
         width: 260px;
-        margin: 56px auto 0;
+        margin: 30px auto 0;
 
     }
 
     .login__greetings {
         align-self: center;
+        margin-bottom: 80px;
     }
 
     .login__button {
@@ -197,5 +198,8 @@ select:-webkit-autofill:focus {
     .login__input {
         width: 260px;
         height: 46px;
+    }
+    .login__server-error {
+        margin-top: 242px;
     }
 }

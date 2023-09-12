@@ -28,11 +28,14 @@
     line-height: 15px;
     color: #4285F4;
     text-decoration: none;
+    margin-bottom: 30px;
 }
 
 
 @media (min-width: 768px) {
     .error {
+        width: 768px;
+        height: 1024px;
         padding: 407px 30px 60px;
     }
 
@@ -50,11 +53,15 @@
     .error__link {
         font-size: 14px;
         line-height: 17px;
+        margin-bottom: 222px;
     }
 }
 
 @media (min-width: 1280px) {
     .error {
         padding: 246px 70px 60px;
+    }
+    .error__link {
+        margin-bottom: 60px;
     }
 }

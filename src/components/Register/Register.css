@@ -23,19 +23,19 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
-    margin: 0 0 10px
+    margin: 0 0 13px
 }
 
 .register__input {
     margin: 0;
     padding: 0;
-    height: 17px;
     background: none;
     border: none;
     color: rgba(255, 255, 255, 1);
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+    height: 46px;
 
 }
 
@@ -70,7 +70,7 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
-    margin: 100px 0 6px;
+    margin: 65px 0 6px;
     color: rgba(238, 52, 101, 1);
 }
 
@@ -166,9 +166,10 @@ select:-webkit-autofill:focus {
     }
     .register__label {
         border-radius: 8px;
+        margin-bottom: 14px;
     }
     .register__server-error {
-        margin-top: 69px;
+        margin-top: 62px;
 
     }
 
@@ -177,17 +178,20 @@ select:-webkit-autofill:focus {
 @media (max-width: 420px) {
     .register {
         width: 260px;
-        margin: 56px auto 0;
+        margin: 10px auto 0;
     }
 
     .register__title {
         align-self: center;
+        margin-bottom: 82px;
     }
 
     .register__button {
         font-size: 12px;
         line-height: 15px;
         cursor: pointer;
+        margin-top: 92px;
+
     }
 
     .register__input {
@@ -201,6 +205,9 @@ select:-webkit-autofill:focus {
         margin-bottom: 30px;
     }
 
+    .register__label {
+        margin: 0 0 12px
+    }
     .register__link {
         font-size: 12px;
         line-height: 15px;

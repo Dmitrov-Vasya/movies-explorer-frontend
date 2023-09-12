@@ -12,7 +12,7 @@ const Movies = () => {
                     <SearchForm />
                      <MoviesCardList />
                      <div className="movies__button-wrapper">
-                         <button className="movies__button_add" type="button">
+                         <button className="movies__button-add" type="button">
                              Ещё
                          </button>
                      </div>

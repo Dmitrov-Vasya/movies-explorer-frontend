@@ -19,13 +19,11 @@ const Login = ({setLoggedIn}) => {
                     type="email"
                 />
             </label>
-            <hr className="login__line"></hr>
             <span className="login__error login__error_active"></span>
             <label className="login__label">
                 Пароль
                 <input className="login__input" type="password"/>
             </label>
-            <hr className="login__line"></hr>
             <span className="login__error login__error_active"> </span>
 
             <span className="login__server-error login__server-error_active"></span>

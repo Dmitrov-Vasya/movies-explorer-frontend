@@ -12,19 +12,16 @@ const Register = () => {
             <label className="register__label">Имя
                 <input className="register__input" type="text"/>
             </label>
-            <hr className="register__line"></hr>
             <span className="register__error"></span>
             <label className="register__label">
                 E-mail
                 <input className="register__input" type="email"/>
             </label>
-            <hr className="register__line"></hr>
             <span className="register__error"></span>
             <label className="register__label">
                 Пароль
                 <input className="register__input" type="password"/>
             </label>
-            <hr className="register__line"></hr>
             <span className="register__error"></span>
             <span className="register__server-error"></span>
             <button className="register__button">Зарегистрироваться</button>
