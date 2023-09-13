@@ -9,7 +9,8 @@ const Register = () => {
         <main className='main'>
         <form className="register">
             <h2 className="register__title">Добро пожаловать!</h2>
-            <label className="register__label">Имя
+            <label className="register__label">
+                Имя
                 <input className="register__input" type="text"/>
             </label>
             <span className="register__error"></span>

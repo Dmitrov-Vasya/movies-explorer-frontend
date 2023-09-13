@@ -86,7 +86,7 @@ const App = () => {
                 />
             </Routes>
 
-            {(pathname !== '/signin' && pathname !== '/signup' && pathname !=='/profile' && pathname !=='/*') ?  <Footer /> : (pathname === '/signin' && pathname === '/signup' && pathname ==='/profile' && pathname ==='/*') }
+            {(pathname === '/movies' || pathname === '/saved-movies' || pathname === '/') ?  <Footer /> : '' }
 
         </div>
     );

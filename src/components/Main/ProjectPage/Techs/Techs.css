@@ -64,6 +64,13 @@
     align-items: center;
 }
 
+@media (min-width: 560px) {
+        .techs__list {
+        grid-template-columns: repeat(4, 84px);
+        grid-template-rows: repeat(2, 57px);
+    }
+}
+
 @media (min-width: 768px) {
     .techs {
         padding-left: 50px;

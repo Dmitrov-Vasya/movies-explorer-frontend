@@ -1,20 +1,3 @@
-.movies__button-wrapper {
-    padding: 0;
-}
-
-@media screen and (max-width: 900px) {
-    .movies__button-wrapper {
-        cursor: pointer;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .movies__button-wrapper {
-        padding: 0 10px 0 10px;
-        cursor: pointer;
-    }
-}
-
 .movies__button-add {
     width: 100%;
     margin-bottom: 80px;
@@ -37,3 +20,27 @@
     opacity: 0.8;
     cursor: pointer;
 }
+
+.movies__button-wrapper {
+    padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .movies__button-wrapper {
+        cursor: pointer;
+    }
+    .movies__button-add {
+        margin-bottom: 78px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .movies__button-wrapper {
+        padding: 0 10px 0 10px;
+        cursor: pointer;
+    }
+    .movies__button-add {
+        margin-bottom: 80px;
+    }
+}
+

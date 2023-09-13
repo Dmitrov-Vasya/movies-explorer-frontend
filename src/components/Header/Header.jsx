@@ -11,6 +11,8 @@ const Header = ({ loggedIn }) => {
     const { pathname } = useLocation();
     const isLoginPage = pathname === '/signup' || pathname === '/signin';
 
+    loggedIn = pathname === '/profile' ? true : loggedIn;
+
     const classNameHeader = () => {
         let className = 'header';
         if (menuIsActive) {

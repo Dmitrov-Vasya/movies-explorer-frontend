@@ -21,7 +21,7 @@
 .profile__input-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 0 0 16px 0;
+    padding: 0 0 17px 0;
     border-bottom: 1px solid #424242;
 }
 
@@ -38,6 +38,7 @@
 }
 
 .profile__input {
+    padding: 0;
     outline: none;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -66,7 +67,7 @@
 
 .profile__edit-button {
     padding: 0;
-    margin: 200px 0 16px 0;
+    margin: 202px 0 17px 0;
     font-size: 13px;
     line-height: 16px;
     color: #fff;
@@ -87,7 +88,7 @@
 
     @media screen and (max-width: 769px) {
         .profile__edit-button {
-            margin: 190px 0 16px 0;
+            margin: 192px 0 16px 0;
         }
         .profile__title {
             margin: 236px 0 96px 0;
@@ -104,14 +105,11 @@
 
         .profile__title {
             text-align: center;
-            margin: 74px 0 123px 0;
+            margin: 68px 0 80px 0;
             font-size: 24px;
             line-height: 29px;
             font-weight: 500;
             color: #ffffff;
-        }
-        .profile__title {
-            margin: 70px 0 80px 0;
         }
 
         .profile__form {
@@ -166,15 +164,12 @@
 
         .profile__edit-button {
             padding: 0;
-            margin: 200px 0 16px 0;
+            margin: 360px 0 16px 0;
             font-size: 12px;
             line-height: normal;
             color: #fff;
             text-align: center;
             cursor: pointer;
-        }
-        .profile__edit-button {
-            margin: 357px 0 16px 0;
         }
 
         .profile__exit-button {
