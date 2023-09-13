@@ -151,6 +151,7 @@
     .about-project__info-duration_type_black {
         line-height: normal;
         font-size: 14px;
+        background-color: #303030;
     }
     .about-project__info-name_type_black {
         line-height: normal;
