@@ -154,7 +154,7 @@ select:-webkit-autofill:focus {
     }
 
     .register__input {
-        width: 381px;
+        width: 378px;
         height: 46px;
         flex-shrink: 0;
         border-radius: 8px;
@@ -196,9 +196,9 @@ select:-webkit-autofill:focus {
     }
 
     .register__input {
-        margin-top: 2px;
-        width: 245px;
-        height: 46px;
+        margin-top: 4px;
+        width: 242px;
+        height: 44px;
     }
 
     .register__subtitle {
