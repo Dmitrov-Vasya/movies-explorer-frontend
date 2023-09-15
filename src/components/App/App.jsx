@@ -7,7 +7,7 @@ import Movies from '../Main/Movies/Movies';
 import Footer from '../Footer/Footer';
 import Landing from '../Main/ProjectPage/ProjectPage';
 import Error from '../Error/Error';
-
+import Preloader from "../Main/Movies/Preloader/Preloader";
 import Profile from '../Main/Profile/Profile';
 import SavedMovies from '../Main/Movies/SavedMovies/SavedMovies';
 import Login from "../Login/Login";
@@ -21,7 +21,9 @@ const App = () => {
     const [isErrorPage, setIsErrorPage] = useState(false);
     const { pathname } = useLocation();
 
-    return (
+    return  isLoading ? (
+            <Preloader />
+        ) : (
         <div className='App'>
             {!isErrorPage && <Header loggedIn={loggedIn} />}
             <Routes>
@@ -85,9 +87,7 @@ const App = () => {
                     }
                 />
             </Routes>
-
             {(pathname === '/movies' || pathname === '/saved-movies' || pathname === '/') ?  <Footer /> : '' }
-
         </div>
     );
 };
