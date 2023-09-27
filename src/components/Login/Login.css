@@ -150,9 +150,11 @@ select:-webkit-autofill:focus {
         margin-top: 20px;
         margin-bottom: 232px;
     }
+
     .login__greetings {
         margin-top: 0;
     }
+
     .login__input {
         width: 378px;
         height: 44px;
@@ -160,17 +162,19 @@ select:-webkit-autofill:focus {
         border-radius: 8px;
         background: #2F2F2F;
     }
+
     .login__server-error {
         margin-top: 153px;
         margin-bottom: 7px;
     }
+
     .login__subtitle {
         margin-bottom: 232px;
     }
 }
 
 @media (max-width: 420px) {
-    .login  {
+    .login {
         width: 260px;
         margin: 30px auto 0;
 
@@ -186,6 +190,7 @@ select:-webkit-autofill:focus {
         line-height: 15px;
         cursor: pointer;
     }
+
     .login__subtitle {
         font-size: 12px;
         line-height: 15px;
@@ -197,10 +202,12 @@ select:-webkit-autofill:focus {
         font-size: 12px;
         line-height: 15px;
     }
+
     .login__input {
         width: 243px;
         height: 44px;
     }
+
     .login__server-error {
         margin-top: 240px;
         margin-bottom: 9px;

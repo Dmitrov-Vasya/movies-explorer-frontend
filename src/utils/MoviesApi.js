@@ -1,28 +1,20 @@
-class ApiMovies {
-    constructor({ url, headers }) {
-        this.url = url.moviesApi;
-        this._headers = headers;
+class MoviesApi {
+
+    constructor({host}) {
+        this.host = host
     }
 
-    // Проверка успешности запроса
-    _isOk(res) {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то где-то пошло не так... Код ошибки ${res.status}`);
+    checkResponse(res) {
+        return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
     }
 
-    // Запрос с проверкой ответа
-    _request(url, options) {
-        return fetch(url, options).then(this._isOk)
-    }
-
-    // Запрос данных пользователя
     getMovies() {
-        return this._request(this.url, {
-            headers: this._headers,
-        })
+        return fetch(this.host + "/beatfilm-movies").then(this.checkResponse)
     }
 }
 
-export const apiMovies = new ApiMovies(apiConfig);
+const moviesApi = new MoviesApi({
+    host: "https://api.nomoreparties.co"
+});
+
+export default moviesApi;

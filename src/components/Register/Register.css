@@ -110,7 +110,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    }
+}
 
 .register__link {
     color: rgba(66, 133, 244, 1);
@@ -140,7 +140,7 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: rgba(255, 255, 255, 1);
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     transition: background-color 5000s ease-in-out 0s;
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
 }
 
 @media (max-width: 769px) {
@@ -165,10 +165,12 @@ select:-webkit-autofill:focus {
     .register__subtitle {
         margin-bottom: 232px;
     }
+
     .register__label {
         border-radius: 8px;
         margin-bottom: 7px;
     }
+
     .register__server-error {
         margin-top: 65px;
 
@@ -210,6 +212,7 @@ select:-webkit-autofill:focus {
     .register__label {
         margin: 0 0 10px
     }
+
     .register__link {
         font-size: 12px;
         line-height: 15px;

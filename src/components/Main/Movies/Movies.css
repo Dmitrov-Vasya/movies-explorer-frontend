@@ -29,6 +29,7 @@
     .movies__button-wrapper {
         cursor: pointer;
     }
+
     .movies__button-add {
         margin-bottom: 78px;
     }
@@ -39,6 +40,7 @@
         padding: 0 10px 0 10px;
         cursor: pointer;
     }
+
     .movies__button-add {
         margin-bottom: 80px;
     }

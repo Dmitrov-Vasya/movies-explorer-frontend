@@ -1,19 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, {useContext, useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
+import {CurrentUserContext} from "../../../contexts/CurrentUserContext"
 import './Profile.css';
 
-const Profile = ({setLoggedIn}) => {
+const Profile = ({user, onSignout, onUpdateUser}) => {
+    const currentUser = useContext(CurrentUserContext);
+    const [name, setValueName] = useState('');
+    const [email, setValueEmail] = useState('');
+
+    useEffect(() => {
+        setValueName(currentUser.name);
+        setValueEmail(currentUser.email);
+    }, [currentUser]);
+
+    function handleChangeName(e) {
+        setValueName(e.target.value);
+    }
+
+    function handleChangeEmail(e) {
+        setValueEmail(e.target.value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        onUpdateUser({
+            name: name,
+            email: email,
+        });
+    }
 
     const handleLogout = () => {
-        setLoggedIn(false);
+        onSignout();
     }
 
     return (
         <>
             <main className="profile">
-                <h2 className="profile__title">Привет, Виталий!</h2>
-                <form className="profile__form" noValidate>
+                <h2 className="profile__title">Привет, {user.name}!</h2>
+                <form className="profile__form" onSubmit={handleSubmit} noValidate>
                     <div className="profile__input-wrapper">
                         <label htmlFor="name" className="profile__input-label">
                             Имя
@@ -26,8 +50,9 @@ const Profile = ({setLoggedIn}) => {
                             type="name"
                             minLength="2"
                             maxLength="70"
-                            defaultValue={'Виталий' || ''}
+                            defaultValue={name}
                             required
+                            onChange={handleChangeName}
                         />
                     </div>
                     <span className="profile__input-error">Какая-то ошибка...</span>
@@ -44,17 +69,21 @@ const Profile = ({setLoggedIn}) => {
                             type="email"
                             minLength="2"
                             maxLength="40"
-                            defaultValue={'test@mail.ru' || ''}
+                            defaultValue={email}
                             required
+                            onChange={handleChangeEmail}
                         />
                     </div>
                     <span className="profile__input-error">Какая-то ошибка...</span>
+                    <div className="profile__button-wrapper">
+                        <button className="profile__edit-button" type="submit" onSubmit={handleSubmit}>Редактировать
+                        </button>
+                        <Link to="/signin" className="profile__exit-button" onClick={handleLogout}>
+                            Выйти из аккаунта
+                        </Link>
+                    </div>
                 </form>
 
-                <p className="profile__edit-button">Редактировать</p>
-                <Link to="/signin" className="profile__exit-button" onClick={handleLogout}>
-                    Выйти из аккаунта
-                </Link>
             </main>
         </>
     );

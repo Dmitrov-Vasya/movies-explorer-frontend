@@ -2,13 +2,13 @@ import React from 'react'
 import './Header.css';
 import logo from '../../images/logo.svg';
 import profile from '../../images/icon-main.svg'
-import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {Link, NavLink, useLocation} from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
-const Header = ({ loggedIn }) => {
+const Header = ({loggedIn}) => {
     const [menuIsActive, setMenuIsActive] = useState(false);
-    const { pathname } = useLocation();
+    const {pathname} = useLocation();
     const isLoginPage = pathname === '/signup' || pathname === '/signin';
 
     loggedIn = pathname === '/profile' ? true : loggedIn;
@@ -21,7 +21,7 @@ const Header = ({ loggedIn }) => {
         if (loggedIn) {
             className += ` header_login`;
         }
-        if (pathname === '/') {
+        if (pathname === '') {
             className += ` header_cover`;
         }
         if (isLoginPage) {
@@ -38,12 +38,16 @@ const Header = ({ loggedIn }) => {
         setMenuIsActive(false);
     }
 
+    useEffect(() => {
+        setMenuIsActive(false);
+    }, [pathname]);
+
     return (
         <header className={classNameHeader()}>
             <Link className='header__link header__link_logo' to='/'>
-                    <img className='header__logo' src={logo} alt='SaveMovie' />
-                </Link>
-             {!isLoginPage &&
+                <img className='header__logo' src={logo} alt='SaveMovie'/>
+            </Link>
+            {!isLoginPage &&
                 (!loggedIn ? (
                     <Navigation>
                         <Link className='header__link' to='/signup'>
@@ -80,9 +84,9 @@ const Header = ({ loggedIn }) => {
                                 <NavLink
                                     className='header__link header__link_profile'
                                     to='/profile'
-                                    > Аккаунт
+                                > Аккаунт
                                 </NavLink>
-                                <img className='header__logo-profile' src={profile}  alt='profile' />
+                                <img className='header__logo-profile' src={profile} alt='profile'/>
                             </div>
                             <button
                                 className='header__button-close'
@@ -99,7 +103,7 @@ const Header = ({ loggedIn }) => {
                         />
                     </>
                 ))
-             }
+            }
         </header>
     );
 };

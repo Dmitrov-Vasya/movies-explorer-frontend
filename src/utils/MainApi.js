@@ -1,70 +1,60 @@
-class Api {
+class MainApi {
+
     constructor(config) {
         this.url = config.url;
         this.headers = config.headers;
         this.body = config.body;
-        this._credentials = config.credentials;
+        this.credentials = config.credentials;
     }
 
-
-    // Создания пользователя
-    addUser({ name, password, email }) {
-        return this._request(`${this.url}/signup`, {
-            method: 'POST',
-            headers: this._headers,
-            credentials: this._credentials,
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: password,
-            })
-        }).then(this._checkResponse);
-    }
-
-
-    // Запрос о сохраненных фильмах
-    getMovies() {
-        return this._request(`${this.url}/movies`, {
-            headers: this._headers,
-            credentials: this._credentials,
-        }).then(this._checkResponse);
+    checkResponse(res) {
+        return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
     }
 
     // Передачи данных пользователя
-    setUserInfo({ name, email }) {
-        return this._request(`${this.url}/users/me`, {
+    editProfile({name, email}) {
+        return fetch(`${this.url}/users/me`, {
             method: 'PATCH',
-            headers: this._headers,
-            credentials: this._credentials,
+            headers: this.headers,
+            credentials: this.credentials,
             body: JSON.stringify({
                 name: name,
                 email: email
             })
-        }).then(this._checkResponse);
+        }).then(this.checkResponse);
+    }
+
+    // Запрос о сохраненных фильмах
+    getSavedMovies() {
+        return fetch(`${this.url}/movies`, {
+            headers: this.headers,
+            credentials: this.credentials,
+        }).then(this.checkResponse);
     }
 
     // Отправка данных об установке/снятии лайка на сервер
-    saveMovie(movie) {
-        return this._request(`${this.url}/movies`, {
+    addSavedMovie(movie) {
+        return fetch(`${this.url}/movies`, {
             method: 'POST',
-            headers: this._headers,
-            credentials: this._credentials,
+            headers: this.headers,
+            credentials: this.credentials,
             body: JSON.stringify(movie)
-        })
+        }).then(this.checkResponse);
     }
 
     // Удаления карточки с сервера
-    deleteMovie(cardId) {
-        return this._request(`${this.url}/movies/:cardId`, {
+    deleteSavedMovie(cardId) {
+        return fetch(`${this.url}/movies/${cardId}`, {
             method: 'DELETE',
-            headers: this._headers,
-            credentials: this._credentials,
-        })
+            headers: this.headers,
+            credentials: this.credentials,
+        }).then(this.checkResponse);
     }
 }
 
-const api = new Api({
-    url: 'https://api.movies.dmitrov.ru.nomoreparties.co/',
+const api = new MainApi({
+    //url: 'https://api.movies.dmitrov.ru.nomoreparties.co',
+    url: 'http://localhost:3001',
     headers: {
         'Content-Type': 'application/json',
     },

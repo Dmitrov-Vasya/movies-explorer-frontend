@@ -1,53 +1,60 @@
-export const baseURL = 'https://api.movies.dmitrov.ru.nomoreparties.co/';
+class AuthApi {
 
-export function checkResponse(res) {
-    return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
+    constructor(config) {
+        this.url = config.url;
+        this.headers = config.headers;
+        this.body = config.body;
+        this._credentials = config.credentials;
+    }
+
+    checkResponse(res) {
+        return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
+    }
+
+    register = ({email, password, name}) => {
+        return fetch(`${this.url}/signup`, {
+            method: 'POST',
+            headers: this.headers,
+            credentials: this._credentials,
+            body: JSON.stringify({email, password, name}),
+        }).then(this.checkResponse);
+    };
+
+    authorize = ({email, password}) => {
+        return fetch(`${this.url}/signin`, {
+            method: 'POST',
+            headers: this.headers,
+            credentials: this._credentials,
+            body: JSON.stringify({email, password}),
+        }).then(this.checkResponse);
+    };
+
+    logout = () => {
+        return fetch(`${this.url}/signout`, {
+            method: 'GET',
+            headers: this.headers,
+            credentials: this._credentials,
+        }).then(this.checkResponse);
+    };
+
+    checkToken = () => {
+        return fetch(`${this.url}/users/me`, {
+            method: 'GET',
+            headers: this.headers,
+            credentials: this._credentials,
+        }).then(this.checkResponse);
+    };
+
 }
 
-export const register = ({ password, email }) => {
-    return fetch(`${baseURL}/signup`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify({ password, email }),
-    }).then(checkResponse);
-};
+const auth = new AuthApi({
+    // url: 'http://158.160.113.149',
+    url: 'http://localhost:3001',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+});
 
-export const authorize = ({ email, password }) => {
-    return fetch(`${baseURL}/signin`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify({ email, password }),
-    }).then(checkResponse);
-};
+export default auth;
 
-export const logout = () => {
-    return fetch(`${baseURL}/signout`, {
-        method: 'GET',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-    }).then(checkResponse);
-};
-
-export const checkToken = () => {
-    return fetch(`${baseURL}/users/me`, {
-        method: 'GET',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-
-            // Authorization: `Bearer ${token}`,
-        },
-        credentials: 'include',
-    }).then(checkResponse);
-};
