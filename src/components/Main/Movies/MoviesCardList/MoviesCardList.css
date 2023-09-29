@@ -14,7 +14,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, 364px);
-    grid-template-rows: 281px 281px 281px;
+    /*grid-template-rows: 281px 281px 281px; */
     gap: 37px 24px;
 
 
@@ -34,7 +34,7 @@
     .movies-card-list__items {
         max-width: 1000px;
         grid-template-columns: repeat(auto-fill, 339px);
-        grid-template-rows: 262px 262px;
+        /*grid-template-rows: 262px 262px;*/
         gap: 30px 30px;
         flex-shrink: 0;
     }
@@ -44,7 +44,7 @@
     .movies-card-list__items {
         max-width: 300px;
         grid-template-columns: repeat(auto-fill, 300px);
-        grid-template-rows: 237px;
+        /*grid-template-rows: 237px;*/
     }
 
     .movies-card-list {

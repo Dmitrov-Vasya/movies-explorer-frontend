@@ -23,7 +23,11 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
-    margin: 0 0 7px
+    margin: 0 0 20px
+}
+
+.register__error-input {
+    color: rgba(238, 52, 101, 1);
 }
 
 .register__input {
@@ -50,33 +54,14 @@
 }
 
 .register__error {
-    visibility: hidden;
     font-family: Inter;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
     margin: 6px 0 6px;
+    margin-top: -18px;
     color: rgba(238, 52, 101, 1);
-}
-
-.register__error_active {
-    visibility: visible;
-}
-
-.register__server-error {
-    visibility: hidden;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-    margin: 65px 0 6px;
-    color: rgba(238, 52, 101, 1);
-}
-
-.register__server-error_active {
-    visibility: visible;
 }
 
 .register__button {
@@ -88,7 +73,7 @@
     font-size: 14px;
     line-height: 17px;
     border: none;
-    margin: 0 0 16px;
+    margin-top: 90px;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -98,11 +83,11 @@
     opacity: 80%;
 }
 
-.register__button_disabled {
-    background: rgba(248, 248, 248, .5);
-    cursor: not-allowed;
-    pointer-events: none;
-}
+/*.register__button_disabled {*/
+/*    background: rgba(248, 248, 248, .5);*/
+/*    cursor: not-allowed;*/
+/*    pointer-events: none;*/
+/*}*/
 
 .register__subtitle {
     margin: 0 auto 70px;
@@ -170,12 +155,6 @@ select:-webkit-autofill:focus {
         border-radius: 8px;
         margin-bottom: 7px;
     }
-
-    .register__server-error {
-        margin-top: 65px;
-
-    }
-
 }
 
 @media (max-width: 420px) {

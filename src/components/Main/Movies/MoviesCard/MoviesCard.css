@@ -13,7 +13,7 @@
 
 .movies-card__img {
     max-width: 364px;
-    max-height: 203px;
+    height: 203px;
     object-fit: cover;
     background-color: #222222;
 }
@@ -94,7 +94,7 @@
 
     .movies-card__img {
         max-width: 339px;
-        max-height: 190px;
+        height: 190px;
         object-fit: cover;
         background-color: #222222;
     }

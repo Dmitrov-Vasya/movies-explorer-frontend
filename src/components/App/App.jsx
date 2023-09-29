@@ -33,12 +33,9 @@ const App = () => {
         auth
             .register({email, password, name})
             .then((res) => {
-
-                if (res.data.email || res.data.password || res.data.name) {
-                    localStorage.setItem("IS_LOGGED_IN", true);
+                localStorage.setItem("IS_LOGGED_IN", true);
                     setLoggedIn(true);
                     navigate('/movies');
-                }
             })
             .catch((err) => {
                 console.log(err);

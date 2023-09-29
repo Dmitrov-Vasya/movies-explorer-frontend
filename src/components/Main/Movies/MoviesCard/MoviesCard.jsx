@@ -18,6 +18,7 @@ const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovie
                     src={thumbnailUrl}
                     alt={name}
                 />
+            </Link>
                 <div className="movies-card__about">
                     <h2 className="movies-card__header">{name}</h2>
                     <button
@@ -30,7 +31,6 @@ const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovie
                 <span className="movies-card__duration">
                     {timeToString(duration)}
                 </span>
-            </Link>
         </li>
     );
 }
