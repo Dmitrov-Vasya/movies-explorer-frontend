@@ -73,7 +73,8 @@
     font-size: 14px;
     line-height: 17px;
     border: none;
-    margin-top: 90px;
+    margin-top: 68px;
+    margin-bottom: 16px;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -153,7 +154,6 @@ select:-webkit-autofill:focus {
 
     .register__label {
         border-radius: 8px;
-        margin-bottom: 7px;
     }
 }
 
@@ -172,8 +172,7 @@ select:-webkit-autofill:focus {
         font-size: 12px;
         line-height: 15px;
         cursor: pointer;
-        margin-top: 85px;
-
+        margin-top: 162px;
     }
 
     .register__input {
@@ -186,10 +185,6 @@ select:-webkit-autofill:focus {
         font-size: 12px;
         line-height: 15px;
         margin-bottom: 30px;
-    }
-
-    .register__label {
-        margin: 0 0 10px
     }
 
     .register__link {

@@ -19,10 +19,10 @@
 }
 
 .movies-card__about {
-    padding: 16px 16px;
+    padding: 7px 23px 16px 16px;
+    margin-top: 8px;
     display: flex;
     justify-content: space-between;
-    padding-top: 12px;
 }
 
 .movies__link {
@@ -100,8 +100,8 @@
     }
 
     .movies-card__about {
-        padding: 14px 15px;
-
+        padding: 14px 22px 14px 15px;
+        margin-top: 0;
     }
 
     .movies-card__header {
@@ -128,8 +128,7 @@
     }
 
     .movies-card__about {
-        padding: 14px 14px;
-
+        padding: 14px 18px 14px 14px;
     }
 
     .movies-card__header {

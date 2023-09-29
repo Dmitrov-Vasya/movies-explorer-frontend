@@ -22,12 +22,15 @@
 }
 
 .movies__button-wrapper {
-    padding: 0;
+    padding-right: 70px;
+    padding-left: 70px;
 }
 
 @media screen and (max-width: 900px) {
     .movies__button-wrapper {
         cursor: pointer;
+        padding-right: 30px;
+        padding-left: 30px;
     }
 
     .movies__button-add {

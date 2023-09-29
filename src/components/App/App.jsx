@@ -179,7 +179,7 @@ const App = () => {
             getSavedMovies();
         }
         getMovies();
-    }, [loggedIn]);
+    }, [loggedIn]); // TODO 1: }, []);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>

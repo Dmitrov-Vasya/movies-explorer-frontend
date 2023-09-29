@@ -42,7 +42,7 @@ function Movies({
         return 5;
     }, [screenWidth]);
 
-      const getAddCount = useCallback(
+    const getAddCount = useCallback(
         (width = screenWidth) => {
             if (screenWidth >= 1280) {
                 return 3;
@@ -52,7 +52,7 @@ function Movies({
         [screenWidth],
     );
 
-      const moviesCardItems = useCallback(
+    const moviesCardItems = useCallback(
         () => {
             const searchText = searchValue.text.trim().toLowerCase();
             const onlyShort = searchValue.short;
@@ -78,6 +78,7 @@ function Movies({
         });
     }, [addMoviesCount, moviesLength]);
 
+    // Обработчик изменения размера окна
     useEffect(() => {
         let initialScreenWidth = window.innerWidth;
 

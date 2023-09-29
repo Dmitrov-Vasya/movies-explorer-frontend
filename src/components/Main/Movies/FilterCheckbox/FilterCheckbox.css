@@ -13,12 +13,6 @@
     }
 }
 
-@media screen and (max-width: 769px) {
-    .filter-checkbox {
-        padding: 0 0 46px 0;
-    }
-}
-
 .filter-checkbox__input {
     height: 0;
     width: 0;
