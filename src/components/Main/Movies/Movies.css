@@ -16,23 +16,16 @@
     transition: all 0.6s ease-in-out;
 }
 
+.movies__button-wrapper {
+    cursor: pointer;
+}
+
 .movies__button-add:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.movies__button-wrapper {
-    padding-right: 70px;
-    padding-left: 70px;
-}
-
 @media screen and (max-width: 900px) {
-    .movies__button-wrapper {
-        cursor: pointer;
-        padding-right: 30px;
-        padding-left: 30px;
-    }
-
     .movies__button-add {
         margin-bottom: 78px;
     }

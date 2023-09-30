@@ -78,7 +78,6 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
                         <input
                             className="profile__input"
                             name="name"
-                            //value={name}
                             id="name"
                             autoComplete="off"
                             type="name"
@@ -90,7 +89,7 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
                             onChange={handleChangeName}
                         />
                     </div>
-                    {(nameDirty && nameError) &&<span  className="profile__input-error">{nameError}</span>}
+                    {(nameDirty && nameError) && <span className="profile__input-error">{nameError}</span>}
 
                     <div className="profile__input-wrapper">
                         <label htmlFor="email" className="profile__input-label">
@@ -100,7 +99,6 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
                             className="profile__input"
                             name="email"
                             id="email"
-                            //value={email}
                             autoComplete="off"
                             type="email"
                             minLength="2"
@@ -111,10 +109,14 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
                             onChange={handleChangeEmail}
                         />
                     </div>
-                    {(emailDirty && emailError) && <span style={{color:'red'}} className="profile__input-error">{emailError}</span>}
+                    {(emailDirty && emailError) && <span className="profile__input-error">{emailError}</span>}
                     <div className="profile__button-wrapper">
-                        {(!emailError && !nameError && (currentUser.name !== name || currentUser.email !== email)) && <button className="profile__edit-button" type="submit" onSubmit={handleSubmit}>Редактировать</button>}
-                        {(emailError || nameError || (currentUser.name === name && currentUser.email === email)) && <button disabled className="profile__edit-button" type="submit" onSubmit={handleSubmit}>Редактировать</button>}
+                        {(!emailError && !nameError && (currentUser.name !== name || currentUser.email !== email)) &&
+                            <button className="profile__edit-button" type="submit"
+                                    onSubmit={handleSubmit}>Редактировать</button>}
+                        {(emailError || nameError || (currentUser.name === name && currentUser.email === email)) &&
+                            <button disabled className="profile__edit-button" type="submit"
+                                    onSubmit={handleSubmit}>Редактировать</button>}
                         <Link to="/signin" className="profile__exit-button" onClick={handleLogout}>
                             Выйти из аккаунта
                         </Link>

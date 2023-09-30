@@ -48,7 +48,7 @@ class AuthApi {
 }
 
 const auth = new AuthApi({
-        url: 'https://api.movies.dmitrov.ru.nomoredomainsrocks.ru',
+        url: 'http://localhost:3001',
     headers: {
         'Content-Type': 'application/json',
     },

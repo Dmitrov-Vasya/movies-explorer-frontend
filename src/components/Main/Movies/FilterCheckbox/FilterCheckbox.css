@@ -7,12 +7,6 @@
     border-bottom: 1px solid #424242;
 }
 
-@media screen and (max-width: 769px) {
-    .filter-checkbox {
-        padding: 0 0 51px 0;
-    }
-}
-
 .filter-checkbox__input {
     height: 0;
     width: 0;
@@ -63,9 +57,19 @@
     margin-right: 12px;
 }
 
+@media screen and (max-width: 769px) {
+    .filter-checkbox {
+        padding: 0 0 51px 0;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .filter-checkbox__span {
         font-size: 11px;
         line-height: 18px;
+    }
+
+    .filter-checkbox {
+        padding: 0 0 50px 0;
     }
 }
