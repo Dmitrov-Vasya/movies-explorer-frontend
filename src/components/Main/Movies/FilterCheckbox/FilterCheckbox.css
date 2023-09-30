@@ -55,6 +55,7 @@
     line-height: 18px;
     color: #ffffff;
     margin-right: 12px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 769px) {

@@ -32,7 +32,7 @@ function Movies({
     }, []);
 
     const getBaseCount = useCallback(() => {
-        if (screenWidth >= 1280) {
+        if (screenWidth >= 1215) {
             return 3;
         }
         if (screenWidth >= 768) {
@@ -41,15 +41,12 @@ function Movies({
         return 5;
     }, [screenWidth]);
 
-    const getAddCount = useCallback(
-        (width = screenWidth) => {
-            if (screenWidth >= 1280) {
-                return 3;
-            }
-            return 2;
-        },
-        [screenWidth],
-    );
+    const getAddCount = useCallback(() => {
+        if (screenWidth >= 1280) {
+            return 3;
+        }
+        return 2;
+    }, [screenWidth]);
 
     const moviesCardItems = useCallback(
         () => {
@@ -77,9 +74,9 @@ function Movies({
             )
 
         setFilteredMoviesList(filteredMoviesBySearch);
-        setAddMoviesCount(getAddCount(window.innerWidth));
+        setAddMoviesCount(getAddCount());
         setShowMoviesLength(getBaseCount());
-    }, [moviesList, searchValue]);
+    }, [getAddCount, getBaseCount, moviesList, searchValue]);
 
 
     // Обработчик изменения размера окна
@@ -95,13 +92,12 @@ function Movies({
 
             initialScreenWidth = newScreenWidth;
             setScreenWidth(newScreenWidth);
-            setAddMoviesCount(getAddCount(newScreenWidth));
+            setAddMoviesCount(getAddCount());
             setShowMoviesLength(getBaseCount());
         };
 
         setAddMoviesCount(getAddCount());
         setShowMoviesLength(getBaseCount());
-        console.log("filteredMoviesList", filteredMoviesList);
 
         window.addEventListener('resize', handleResize);
         return () => {

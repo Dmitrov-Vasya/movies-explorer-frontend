@@ -19,16 +19,16 @@ const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovie
                     alt={name}
                 />
             </Link>
-                <div className="movies-card__about">
-                    <h2 className="movies-card__header">{name}</h2>
-                    <button
-                        type="button"
-                        className={isSavedMovies ? 'movies-card__icon-delete' : 'movies-card__icon'}
-                        alt={isSavedMovies ? 'Удалить из списка' : 'Сохранить фильм'}
-                        onClick={handleButtonClick}
-                    />
-                </div>
-                <span className="movies-card__duration">
+            <div className="movies-card__about">
+                <h2 className="movies-card__header">{name}</h2>
+                <button
+                    type="button"
+                    className={isSavedMovies ? 'movies-card__icon-delete' : 'movies-card__icon'}
+                    alt={isSavedMovies ? 'Удалить из списка' : 'Сохранить фильм'}
+                    onClick={handleButtonClick}
+                />
+            </div>
+            <span className="movies-card__duration">
                     {timeToString(duration)}
                 </span>
         </li>
