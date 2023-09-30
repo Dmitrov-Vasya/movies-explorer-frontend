@@ -91,7 +91,7 @@
     font-size: 14px;
     line-height: 17px;
     border: none;
-    margin: 90px 0 16px 0;
+    margin: 159px 0 16px 0;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -192,6 +192,7 @@ select:-webkit-autofill:focus {
         font-size: 12px;
         line-height: 15px;
         cursor: pointer;
+        margin: 247px 0 16px 0;
     }
 
     .login__subtitle {

@@ -175,11 +175,11 @@ const App = () => {
 
     useEffect(() => {
         if (loggedIn) {
+            getMovies();
             checkToken();
             getSavedMovies();
         }
-        getMovies();
-    }, [loggedIn]);
+    }, []);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>

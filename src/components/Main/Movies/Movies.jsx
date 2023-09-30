@@ -14,8 +14,7 @@ function Movies({
                     onMovieDelete,
                 }) {
 
-
-    var moviesLength = moviesList.length;
+    const [filteredMoviesList, setFilteredMoviesList] = useState(moviesList);
 
     const [showMoviesLength, setShowMoviesLength] = useState(0);
 
@@ -33,7 +32,7 @@ function Movies({
     }, []);
 
     const getBaseCount = useCallback(() => {
-        if (screenWidth >= 1280) {
+        if (screenWidth >= 1215) {
             return 3;
         }
         if (screenWidth >= 768) {
@@ -42,48 +41,50 @@ function Movies({
         return 5;
     }, [screenWidth]);
 
-      const getAddCount = useCallback(
-        (width = screenWidth) => {
-            if (screenWidth >= 1280) {
-                return 3;
-            }
-            return 2;
-        },
-        [screenWidth],
-    );
+    const getAddCount = useCallback(() => {
+        if (screenWidth >= 1280) {
+            return 3;
+        }
+        return 2;
+    }, [screenWidth]);
 
-      const moviesCardItems = useCallback(
+    const moviesCardItems = useCallback(
         () => {
-            const searchText = searchValue.text.trim().toLowerCase();
-            const onlyShort = searchValue.short;
-            const filteredMoviesBySearch = moviesList
-                .filter((movie) => !onlyShort || movie.duration <= 40)
-                .filter((movie) =>
-                    !searchText || searchText === "" ||
-                    movie.nameRU.trim().toLowerCase().includes(searchText) ||
-                    movie.nameEN.trim().toLowerCase().includes(searchText)
-                )
-
-            moviesLength = filteredMoviesBySearch.length
-
-            return filteredMoviesBySearch.filter((movie, index) => index < showMoviesLength)
+            return filteredMoviesList.slice(0, showMoviesLength);
         },
-        [moviesList, showMoviesLength, searchValue]
+        [filteredMoviesList, showMoviesLength]
     );
 
     const handleMoreClick = useCallback(() => {
         setShowMoviesLength((prev) => {
             const next = prev + addMoviesCount;
-            return next > moviesLength ? moviesLength : next;
+            return next > filteredMoviesList.length ? filteredMoviesList.length : next;
         });
-    }, [addMoviesCount, moviesLength]);
+    }, [addMoviesCount, filteredMoviesList]);
 
+    useEffect(() => {
+        const searchText = searchValue.text.trim().toLowerCase();
+        const onlyShort = searchValue.short;
+        const filteredMoviesBySearch = moviesList
+            .filter((movie) => !onlyShort || movie.duration <= 40)
+            .filter((movie) =>
+                !searchText || searchText === "" ||
+                movie.nameRU.trim().toLowerCase().includes(searchText) ||
+                movie.nameEN.trim().toLowerCase().includes(searchText)
+            )
+
+        setFilteredMoviesList(filteredMoviesBySearch);
+        setAddMoviesCount(getAddCount());
+        setShowMoviesLength(getBaseCount());
+    }, [getAddCount, getBaseCount, moviesList, searchValue]);
+
+
+    // Обработчик изменения размера окна
     useEffect(() => {
         let initialScreenWidth = window.innerWidth;
 
         const handleResize = () => {
             const newScreenWidth = window.innerWidth;
-
 
             if (initialScreenWidth === newScreenWidth) {
                 return;
@@ -91,7 +92,7 @@ function Movies({
 
             initialScreenWidth = newScreenWidth;
             setScreenWidth(newScreenWidth);
-            setAddMoviesCount(getAddCount(newScreenWidth));
+            setAddMoviesCount(getAddCount());
             setShowMoviesLength(getBaseCount());
         };
 
@@ -103,6 +104,7 @@ function Movies({
             window.removeEventListener('resize', handleResize);
         };
     }, [getAddCount, getBaseCount]);
+
 
     return (
         <>
@@ -116,11 +118,13 @@ function Movies({
                     />
                     {isLoading ? <Preloader/> : (
                         moviesList.length === 0 ? (
-                            <span className='movies-card-list movies-card-list__not-movie movies-card-list__not-movie_error'>
-                              Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз
-                            </span>
+                            <section className="movies-card-list" aria-label="Секция с фильмами">
+                                <span className='movies-card-list__not-movie movies-card-list__not-movie_error'>
+                                  Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз
+                                </span>
+                            </section>
                         ) : (
-                            < MoviesCardList
+                            <MoviesCardList
                                 moviesList={moviesCardItems()}
                                 savedMoviesList={savedMoviesList}
                                 onMovieLike={onMovieLike}
@@ -128,7 +132,7 @@ function Movies({
                             />
                         )
                     )}
-                    {moviesLength > showMoviesLength ? (
+                    {filteredMoviesList.length > showMoviesLength ? (
                         <div className="movies__button-wrapper">
                             <button className="movies__button-add" onClick={handleMoreClick} type="button">
                                 Ещё

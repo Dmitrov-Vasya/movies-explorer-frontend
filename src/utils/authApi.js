@@ -48,8 +48,7 @@ class AuthApi {
 }
 
 const auth = new AuthApi({
-    // url: 'http://158.160.113.149',
-    url: 'http://localhost:3001',
+        url: 'http://localhost:3001',
     headers: {
         'Content-Type': 'application/json',
     },

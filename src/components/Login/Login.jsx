@@ -42,7 +42,7 @@ const Login = ({handleLogin}) => {
         if (!e.target.value)
             error = 'Нужно указать пароль';
         else if (!re.test(String(e.target.value).toLowerCase())) {
-            error ='Некорректный email';
+            error = 'Некорректный email';
         } else {
             error = '';
         }
@@ -54,6 +54,7 @@ const Login = ({handleLogin}) => {
             setData((oldData) => ({...oldData, [name]: value}));
         }
     }
+
     const blurHandler = (e) => {
         switch (e.target.name) {
             case 'email':
@@ -96,7 +97,7 @@ const Login = ({handleLogin}) => {
                         onBlur={e => blurHandler(e)}
                     />
                 </label>
-                {(emailDirty && emailError) &&<span  className="login__error">{emailError}</span>}
+                {(emailDirty && emailError) && <span className="login__error">{emailError}</span>}
                 <label className="login__label">
                     Пароль
                     <input className={`login__input ${passwordError ? 'login__error-input' : ''}`}
@@ -109,7 +110,7 @@ const Login = ({handleLogin}) => {
                            onBlur={e => blurHandler(e)}
                     />
                 </label>
-                {(passwordDirty && passwordError) &&<span  className="login__error">{passwordError}</span>}
+                {(passwordDirty && passwordError) && <span className="login__error">{passwordError}</span>}
                 <button className="login__button" type="submit">Войти</button>
                 <p className="login__subtitle">
                     Еще не зарегистрированы?&ensp;

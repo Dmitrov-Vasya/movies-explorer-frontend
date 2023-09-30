@@ -53,7 +53,7 @@ const MoviesCardList = ({
                     })}
                 </ul>
             ) : (
-                <span className='movies-card-list movies-card-list__not-movie'>
+                <span className='movies-card-list__not-movie'>
                   Ничего не найдено
                 </span>
             )}
