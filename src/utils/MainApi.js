@@ -53,7 +53,7 @@ class MainApi {
 }
 
 const api = new MainApi({
-        url: 'http://localhost:3001',
+        url: 'https://api.movies.dmitrov.ru.nomoredomainsrocks.ru',
     headers: {
         'Content-Type': 'application/json',
     },
