@@ -12,6 +12,7 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
     const [nameError, setValueNameError] = useState('')
     const [emailError, setValueEmailError] = useState('')
 
+
     function handleChangeName(e) {
         setValueName(e.target.value);
         if (e.target.value.length < 2) {
@@ -44,13 +45,16 @@ const Profile = ({user, onSignout, onUpdateUser}) => {
                 break
         }
     }
-
+    const hintEdit = () => {
+        alert('Вы успешно изменили данные')
+    }
     function handleSubmit(e) {
         e.preventDefault();
         onUpdateUser({
             name: name,
             email: email,
         });
+        hintEdit();
     }
 
     const handleLogout = () => {
