@@ -26,7 +26,9 @@ const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovie
                     isSavedMovies ?
                     <button
                     type="button"
-                    className="movies-card__n movies-card__icon-delete" /> :
+                    className="movies-card__n movies-card__icon-delete"
+                    onClick={handleButtonClick}
+                    /> :
                         <button
                             type="button"
                             className={`${isSaved ? "movies-card__icon" : "movies-card__icon-unactive"}`} onClick={handleButtonClick}></button>
