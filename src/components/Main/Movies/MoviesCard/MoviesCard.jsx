@@ -1,13 +1,14 @@
-import React from 'react';
+import {useState} from 'react';
 import './MoviesCard.css';
 import {timeToString} from '../../../../utils/timeToString';
 import {Link} from "react-router-dom";
 
 
 const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovies, onButtonClick}) => {
-
+    const [isSaved, setIsSaved] = useState(isSavedMovies);
     function handleButtonClick() {
         onButtonClick(id)
+        setIsSaved(!isSaved)
     }
 
     return (
@@ -21,12 +22,15 @@ const MoviesCard = ({id, name, thumbnailUrl, trailerLink, duration, isSavedMovie
             </Link>
             <div className="movies-card__about">
                 <h2 className="movies-card__header">{name}</h2>
-                <button
+                {
+                    isSavedMovies ?
+                    <button
                     type="button"
-                    className={isSavedMovies ? 'movies-card__icon-delete' : 'movies-card__icon'}
-                    alt={isSavedMovies ? 'Удалить из списка' : 'Сохранить фильм'}
-                    onClick={handleButtonClick}
-                />
+                    className="movies-card__n movies-card__icon-delete" /> :
+                        <button
+                            type="button"
+                            className={`${isSaved ? "movies-card__icon" : "movies-card__icon-unactive"}`} onClick={handleButtonClick}></button>
+                }
             </div>
             <span className="movies-card__duration">
                     {timeToString(duration)}

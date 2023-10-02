@@ -63,7 +63,17 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
+    width: 14px;
+}
+
+.movies-card__icon-unactive {
+    cursor: pointer;
     border: none;
+    box-sizing: border-box;
+    background: url('../../../../images/save-unactive.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
     width: 14px;
 }
 
@@ -76,7 +86,6 @@
     background-repeat: no-repeat;
     background-color: transparent;
     color: white;
-    border: none;
     width: 14px;
 }
 
