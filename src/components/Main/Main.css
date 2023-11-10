@@ -1,0 +1,38 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.main__container {
+    padding: 75px 0 65px 0;
+}
+
+.main_movies {
+    padding: 0 10px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .main__container {
+        padding: 90px 30px;
+    }
+
+    .main_movies {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .main__container {
+        padding: 110px 70px
+    }
+
+    .main_movies {
+        padding: 0 70px;
+    }
+}
