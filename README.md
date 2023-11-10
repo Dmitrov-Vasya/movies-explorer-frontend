@@ -1,10 +1,8 @@
- HTML, CSS, JS
- Movies Frontend
+# Сайт визитка и кинотеатр
+В данном проекте я сверстал  адаптивный сайт визитку с возможностью регистрации и авторизации. После авторизации появляется возможность поиска видео и сохранения в личный кабинет. Связал его с собственным и внешним Api.
+### Что я использовал в данном проекте:
+ HTML, CSS,резиновая верстка под монитор, планшет и телефон, React.js (библиотеки), REST API, Webpack, JSON API.
  
- Макет Figma dark-3
-
  PR https://github.com/Dmitrov-Vasya/movies-explorer-frontend/pull/3
-
+ 
  URL: movies.dmitrov.nomoredomainsrocks.ru
-
- URL API: api.movies.dmitrov.ru.nomoredomainsrocks.ru
